@@ -15,7 +15,6 @@ SynaMLP for Keras. Trains a simple SynaNet MLP on the MNIST dataset.
 ```
 ```python
 from __future__ import print_function
-
 import keras
 import tensorflow as tf
 from keras.datasets import mnist
@@ -25,7 +24,7 @@ from keras.optimizers import Adam, SGD
 from keras import backend as K
 from keras.engine.topology import Layer
 ```
-
+hyperparameters
 ```python
 batch_size = 100
 num_classes = 10
@@ -35,7 +34,7 @@ onedim = 784
 traindim = 60000
 testdim = 10000
 ```
-# synapse unit
+synapse unit
 ```python
 class Synapse(Layer):
   def __init__(self, output_dim, **kwargs):
@@ -66,7 +65,7 @@ class Synapse(Layer):
   def compute_output_shape(self, input_shape):
      return (input_shape[0], self.output_dim)
 ```
-# the data, split between train and test sets
+data, split between train and test sets
 ```python
 (x_train, y_train), (x_test, y_test) = mnist.load_data()
 
@@ -78,8 +77,11 @@ x_train /= 255
 x_test /= 255
 print(x_train.shape[0], 'train samples')
 print(x_test.shape[0], 'test samples')
-
-# convert class vectors to binary class matrices
+```
+```python
+convert class vectors to binary class matrices
+```
+```python
 y_train = keras.utils.to_categorical(y_train, num_classes)
 y_test = keras.utils.to_categorical(y_test, num_classes)
 
