@@ -7,28 +7,26 @@ SynaMPL for Keras illustrates the application of Synaptic Neural Network to Mult
 
 Figure 1: SynaMLP: (green, blue, red) dots are (input, hidden, output) layers.
 
-SynaMLP for Keras.
+SynaMLP for Keras. Trains a simple SynaNet MLP on the MNIST dataset.
 
-'''Trains a simple SynaNet MLP on the MNIST dataset.
-
+```python
     Copyright Rights (c) 2018, Neatware.
-
     Open Source License: Apache 2.0
-'''
+```
 ```python
 from __future__ import print_function
 
 import keras
+import tensorflow as tf
 from keras.datasets import mnist
 from keras.models import Sequential
 from keras.layers import Dense, Activation, Dropout
 from keras.optimizers import Adam, SGD
-
 from keras import backend as K
 from keras.engine.topology import Layer
+```
 
-import tensorflow as tf
-
+```python
 batch_size = 100
 num_classes = 10
 epochs = 30
@@ -36,8 +34,9 @@ hidden_size = 250
 onedim = 784
 traindim = 60000
 testdim = 10000
-
+```
 # synapse unit
+```python
 class Synapse(Layer):
   def __init__(self, output_dim, **kwargs):
     self.output_dim = output_dim
@@ -66,8 +65,9 @@ class Synapse(Layer):
 
   def compute_output_shape(self, input_shape):
      return (input_shape[0], self.output_dim)
-
+```
 # the data, split between train and test sets
+```python
 (x_train, y_train), (x_test, y_test) = mnist.load_data()
 
 x_train = x_train.reshape(traindim, onedim)
