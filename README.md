@@ -78,9 +78,7 @@ x_test /= 255
 print(x_train.shape[0], 'train samples')
 print(x_test.shape[0], 'test samples')
 ```
-```python
 convert class vectors to binary class matrices
-```
 ```python
 y_train = keras.utils.to_categorical(y_train, num_classes)
 y_test = keras.utils.to_categorical(y_test, num_classes)
@@ -103,15 +101,17 @@ model.add(Dense(num_classes, activation='softmax'))
 # summary
 model.summary()
 model.compile(loss='categorical_crossentropy', optimizer=SGD(lr=0.01, decay=1e-6, momentum=0.9, nesterov=True), metrics=['accuracy'])
-
-# history
+```
+history
+```python
 history = model.fit(x_train, y_train,
                     batch_size=batch_size,
                     epochs=epochs,
                     verbose=1,
                     validation_data=(x_test, y_test))
-
-# evaluate(x=None, y=None, batch_size=None, verbose=
+```
+evaluate(x=None, y=None, batch_size=None, verbose=
+```python
 score = model.evaluate(x_test, y_test, verbose=0, batch_size=batch_size)
 print('Test loss:', score[0])
 print('Test accuracy:', score[1])
