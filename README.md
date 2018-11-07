@@ -110,7 +110,7 @@ history = model.fit(x_train, y_train,
                     verbose=1,
                     validation_data=(x_test, y_test))
 ```
-evaluate(x=None, y=None, batch_size=None, verbose=
+evaluate
 ```python
 score = model.evaluate(x_test, y_test, verbose=0, batch_size=batch_size)
 print('Test loss:', score[0])
