@@ -1,4 +1,4 @@
-# SynaNet - Synaptic Neural Network
+# SynaNN - Synaptic Neural Network
 
 A Synaptic Neural Network (SynaNN) consists of synapses and neurons. Inspired by the research of biological synapses, we abstracted a synapse as a nonlinear function of two excitatory and inhibitory probabilities
 
