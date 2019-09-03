@@ -2,9 +2,8 @@
 
 Synapses play an important role in biological neural networks.  They're joint points of neurons where learning and memory happened. Inspired by the synapse research of neuroscience, we found that a simple model can describe the key property of a synapse. By combining deep learning, we expect to build ultra large scale neural networks to solve real-world AI problems. At the same time, we want to create an explainable neural network model to better understand what an AI model doing instead of a black box solution.
 
-Based on the analysis of excitatory and inhibitory channels of synapses, we proposed a synapse model called Synaptic Neural Network (SynaNN) where a synapse function is represented as the inputs of probabilities of both excitatory and inhibitory channels along with their joint probability as the output. SynaNN is constructed by synapses and neurons. A synapse graph is a connection of synapses. In particular, a synapse tensor is fully connected synapses from input neurons to output neurons. Synapse learning can work with gradient descent and backpropagation algorithms. SynaNN can be applied to construct MLP, CNN, and RNN models.  
+Based on the analysis of excitatory and inhibitory channels of synapses, we proposed a synapse model called Synaptic Neural Network (SynaNN) where a synapse function is represented as the inputs of probabilities of both excitatory and inhibitory channels along with their joint probability as the output. SynaNN is constructed by synapses and neurons. A synapse graph is a connection of synapses. In particular, a synapse tensor is fully connected synapses from input neurons to output neurons. Synapse learning can work with gradient descent and backpropagation algorithms. SynaNN can be applied to construct MLP, CNN, and RNN models.
 
-<<<<<<< HEAD
 SynaNN Key Features:
 
 * Synapses are joint points of neurons with electronic and chemical functions, location of learning and memory
@@ -24,7 +23,10 @@ Refrences:
 "SynaNN: A Synaptic Neural Network and Synapse Learning"
 https://www.researchgate.net/publication/327433405_SynaNN_A_Synaptic_Neural_Network_and_Synapse_Learning
 
+Notes:
+
+A Synaptic Neural Network (SynaNN) consists of synapses and neurons. Inspired by the research of biological synapses, we abstracted a synapse as a nonlinear function of two excitatory and inhibitory probabilities
+
+SynaMPL for Keras illustrates the application of Synaptic Neural Network to Multiple Layer Perceptrons. Synaptic Multiple Layer Perceptrons is the fully-connected Multiple Layer Perceptron (Minsky et al. (2017)) with two hidden layers connected by a synapse tensor along with an input layer and an output layer. Input and output layers act as downsize and classifiers while hidden layer of the synapse tensor plays the role of distribution transformation. The activation functions are required to connected
 
 
-=======
->>>>>>> origin/master
