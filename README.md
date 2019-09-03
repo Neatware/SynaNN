@@ -4,6 +4,7 @@ Synapses play an important role in biological neural networks.  They're joint po
 
 Based on the analysis of excitatory and inhibitory channels of synapses, we proposed a synapse model called Synaptic Neural Network (SynaNN) where a synapse function is represented as the inputs of probabilities of both excitatory and inhibitory channels along with their joint probability as the output. SynaNN is constructed by synapses and neurons. A synapse graph is a connection of synapses. In particular, a synapse tensor is fully connected synapses from input neurons to output neurons. Synapse learning can work with gradient descent and backpropagation algorithms. SynaNN can be applied to construct MLP, CNN, and RNN models.  
 
+<<<<<<< HEAD
 SynaNN Key Features:
 
 * Synapses are joint points of neurons with electronic and chemical functions, location of learning and memory
@@ -25,3 +26,5 @@ https://www.researchgate.net/publication/327433405_SynaNN_A_Synaptic_Neural_Netw
 
 
 
+=======
+>>>>>>> origin/master
