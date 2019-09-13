@@ -23,6 +23,7 @@ Refrences:
 "SynaNN: A Synaptic Neural Network and Synapse Learning"
 https://www.researchgate.net/publication/327433405_SynaNN_A_Synaptic_Neural_Network_and_Synapse_Learning
 
+'''python
 #
 #
 # SynaNN for Image Classification with MNIST Dataset in Pytorch
@@ -59,6 +60,7 @@ test_counter = []
 test_losses = []
 
 class Synapse(nn.Module):
+'''
     r"""Applies a synapse function to the incoming data.`
 
     Args:
@@ -91,6 +93,7 @@ class Synapse(nn.Module):
         >>> print(output.size())
         torch.Size([128, 30])
     """
+'''python
     __constants__ = ['bias', 'in_features', 'out_features']
 
     def __init__(self, in_features, out_features, bias=True):
@@ -250,5 +253,4 @@ def main():
         
 if __name__ == '__main__':
   main()
-
-
+'''
