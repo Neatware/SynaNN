@@ -1,7 +1,3 @@
----
-typora-copy-images-to: ./
----
-
 # SynaNN: Synaptic Neural Network
 
 ## Introduction
@@ -25,13 +21,6 @@ Based on the analysis of excitatory and inhibitory channels of synapses, we prop
 One challenge was to represent the links of synapses as tensors so we can apply the neural network framework such as tensorflow for deep learning. A key step is to construct a Synapse layer to replace Dense layer in Keras so we can embed synapse in deep learning neural network. This has been done by defining a custom model of Synapse.  
 
 Synapse pluses BatchNormalization can greatly speed up the processing to achieve an accuracy goal. We can think of a synapse as a statistical distribution computing unit while batch normalization makes evolution faster. 
-
-## Refrences
-
-"SynaNN: A Synaptic Neural Network and Synapse Learning"
-https://www.researchgate.net/publication/327433405_SynaNN_A_Synaptic_Neural_Network_and_Synapse_Learning
-
-
 
 ## SynaNN for MNIST in Pytorch
 
@@ -261,3 +250,9 @@ if __name__ == '__main__':
   main()
 
 ```
+
+## Refrences
+
+"SynaNN: A Synaptic Neural Network and Synapse Learning"
+https://www.researchgate.net/publication/327433405_SynaNN_A_Synaptic_Neural_Network_and_Synapse_Learning
+
