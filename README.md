@@ -36,9 +36,13 @@ By combining deep learning, we expect to build ultra large scale neural networks
 
 A synapse graph is a connection of synapses. In particular, a synapse tensor is fully connected synapses from input neurons to output neurons with some hidden layers. Synapse learning can work with gradient descent and backpropagation algorithms. SynaNN can be applied to construct MLP, CNN, and RNN models.
 
-Assume that the total number of input of the synapse graph equals the total number of outputs, the fully-connected synapse graph is defined as  
+```
+![\Large x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}](https://latex.codecogs.com/svg.latex?\Large&space;x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}) 
+```
 
-![](https://latex.codecogs.com/svg.latex?y_{i}(\textbf{x}; \pmb\beta_i) = \alpha_i x_{i}{\prod_{j=1}^{n}(1-\beta_{ij}x_{j})},\ for\ all\ i \in [1,n])
+Assume that the total number of input of the synapse graph equals the total number of outputs, the fully-connected synapse graph is defined as 
+
+​                                                    ![](https://latex.codecogs.com/svg.latex?y_{i}(\textbf{x}; \pmb\beta_i) = \alpha_i x_{i}{\prod_{j=1}^{n}(1-\beta_{ij}x_{j})},\ for\ all\ i \in [1,n])
 
 where  ![](https://latex.codecogs.com/svg.latex?\textbf{x} = (x_1, \cdots, x_n), x_i \in (0, 1), \textbf{y} = (y_1, \cdots, y_n), y_i \in (0,1), \beta_{ij} \in (0,1)). 
 
