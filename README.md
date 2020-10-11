@@ -46,7 +46,11 @@ Assume that the total number of input of the synapse graph equals the total numb
 <img src="https://latex.codecogs.com/svg.latex?y_{i}(\textbf{x};%20\pmb\beta_i)%20=%20\alpha_i%20x_{i}{\prod_{j=1}^{n}(1-\beta_{ij}x_{j})},\%20for\%20all\%20i%20\in%20[1,n]"/>
 </p>
 
-where <img src="https://latex.codecogs.com/svg.latex?\textbf{x}=(x_1,\cdots,x_n),x_i\in(0,1),\textbf{y}=(y_1,\cdots,y_n),y_i\in(0,1),\beta_{ij}\in(0,1))"/>. 
+where 
+
+<p align='center'>
+<img src="https://latex.codecogs.com/svg.latex?\textbf{x}=(x_1,\cdots,x_n),\textbf{y}=(y_1,\cdots,y_n),x_i,y_i\in(0,1),\alpha_i \geq 1,\beta_{ij}\in(0,1))"/>
+</p>
 
 Transformed to tensor/matrix representation, we have the synapse log formula, 
 
