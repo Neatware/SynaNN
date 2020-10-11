@@ -29,7 +29,7 @@ A Synaptic Neural Network (SynaNN) contains non-linear synapse networks that con
 where x∈(0,1) is the open probability of all excitatory channels and α >0 is the parameter of the excitatory channels; y∈(0,1) is the open probability of all inhibitory channels and β∈(0,1) is the parameter of the inhibitory channels. The surface of the synapse function is  
 
 <p align='center'>
-<img src="synpase.png" alt="synpase" width="50%" />
+<img src="./picture/synpase.png" alt="synpase" width="50%" />
 </p>
 
 By combining deep learning, we expect to build ultra large scale neural networks to solve real-world AI problems. At the same time, we want to create an explainable neural network model to better understand what an AI model doing instead of a black box solution.
