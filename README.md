@@ -10,13 +10,13 @@
 
 Synapses play an important role in biological neural networks.  They're joint points of neurons where learning and memory happened. The picture below demonstrates that two neurons (red) connected through a branch chain of synapses which may  link to other neurons. 
 
-<img src="C:\Users\John\Documents\GitHub\SynaNet\synapse.jpg" alt="synapse" style="zoom: 33%;" />
+<img src="synapse.jpg" alt="synapse" style="zoom: 33%;" />
 
 
 
 Inspired by the synapse research of neuroscience, we construct a simple model that can describe some key properties of a synapse. 
 
-​                                           ![synapse-unit](C:\Users\John\Documents\GitHub\SynaNet\synapse-unit.png) 
+​                                           ![synapse-unit](.\synapse-unit.png) 
 
 A Synaptic Neural Network (SynaNN) contains non-linear synapse networks that connect to neurons. A synapse consists of an input from the excitatory-channel, an input from the inhibitory-channel, and an output channel which sends a value to other synapses or neurons. The synapse function is
 $$
