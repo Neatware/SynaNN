@@ -2,7 +2,7 @@
 
 
 
-#                SynaNN: A Synaptic Neural Network 
+#                       SynaNN: A Synaptic Neural Network 
 
 
 
@@ -11,13 +11,13 @@
 Synapses play an important role in biological neural networks.  They're joint points of neurons where learning and memory happened. The picture below demonstrates that two neurons (red) connected through a branch chain of synapses which may  link to other neurons. 
 
 <p align='center'>
-<img src="synapse.jpg" alt="synapse" width="80%" />
+<img src="./picture/synapse.jpg" alt="synapse" width="80%" />
 </p>
 
 Inspired by the synapse research of neuroscience, we construct a simple model that can describe some key properties of a synapse. 
 
 <p align='center'>
-<img src="synapse-unit.png" alt="synpase" width="70%" /> 
+<img src="./picture/synapse-unit.png" alt="synpase" width="70%" /> 
 </p>
 
 A Synaptic Neural Network (SynaNN) contains non-linear synapse networks that connect to neurons. A synapse consists of an input from the excitatory-channel, an input from the inhibitory-channel, and an output channel which sends a value to other synapses or neurons. The synapse function is
@@ -35,7 +35,7 @@ where x∈(0,1) is the open probability of all excitatory channels and α >0 is 
 By combining deep learning, we expect to build ultra large scale neural networks to solve real-world AI problems. At the same time, we want to create an explainable neural network model to better understand what an AI model doing instead of a black box solution.
 
 <p align='center'>
-<img src="E425.tmp.png" alt="synpase" width="60%" />
+<img src="./picture/E425.tmp.png" alt="synpase" width="60%" />
 </p>
 
 A synapse graph is a connection of synapses. In particular, a synapse tensor is fully connected synapses from input neurons to output neurons with some hidden layers. Synapse learning can work with gradient descent and backpropagation algorithms. SynaNN can be applied to construct MLP, CNN, and RNN models.
@@ -59,7 +59,7 @@ We are going to implement this formula for fully-connected synapse network with 
 Moreover, we can design synapse graph like circuit below for some special applications. 
 
 <p align='center'>
-<img src="synapse-flip.png" alt="synapse-flip" width="50%" />
+<img src="./picture/synapse-flip.png" alt="synapse-flip" width="50%" />
 </p>
 
 ## 2. SynaNN Key Features
@@ -368,7 +368,7 @@ if __name__ == '__main__':
 ## 4. Results
 
 <p align='center'>
-<img src="synapse-pytorch-99p.jpg" alt="synapse-pytorch-99p" style="width: 80%;" />
+<img src="./picture/synapse-pytorch-99p.jpg" alt="synapse-pytorch-99p" style="width: 80%;" />
 </p>
 
 ## 5. References

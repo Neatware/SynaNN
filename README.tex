@@ -1,0 +1,549 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\newenvironment{Shaded}{}{}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{#1}}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.49,0.56,0.16}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.53,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.73,0.13,0.13}{\textit{#1}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.02,0.16,0.49}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.40,0.40,0.40}{#1}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.74,0.48,0.00}{#1}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.73,0.40,0.53}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.10,0.09,0.49}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifluatex
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+
+\author{}
+\date{}
+
+\begin{document}
+
+\hypertarget{header-n3}{%
+\section{\texorpdfstring{ SynaNN: A Synaptic Neural Network
+}{ SynaNN: A Synaptic Neural Network }}\label{header-n3}}
+
+\hypertarget{header-n5}{%
+\subsection{1. Introduction}\label{header-n5}}
+
+Synapses play an important role in biological neural networks. They're
+joint points of neurons where learning and memory happened. The picture
+below demonstrates that two neurons (red) connected through a branch
+chain of synapses which may link to other neurons.
+
+Inspired by the synapse research of neuroscience, we construct a simple
+model that can describe some key properties of a synapse.
+
+A Synaptic Neural Network (SynaNN) contains non-linear synapse networks
+that connect to neurons. A synapse consists of an input from the
+excitatory-channel, an input from the inhibitory-channel, and an output
+channel which sends a value to other synapses or neurons. The synapse
+function is
+
+where x∈(0,1) is the open probability of all excitatory channels and α
+\textgreater0 is the parameter of the excitatory channels; y∈(0,1) is
+the open probability of all inhibitory channels and β∈(0,1) is the
+parameter of the inhibitory channels. The surface of the synapse
+function is
+
+By combining deep learning, we expect to build ultra large scale neural
+networks to solve real-world AI problems. At the same time, we want to
+create an explainable neural network model to better understand what an
+AI model doing instead of a black box solution.
+
+A synapse graph is a connection of synapses. In particular, a synapse
+tensor is fully connected synapses from input neurons to output neurons
+with some hidden layers. Synapse learning can work with gradient descent
+and backpropagation algorithms. SynaNN can be applied to construct MLP,
+CNN, and RNN models.
+
+Assume that the total number of input of the synapse graph equals the
+total number of outputs, the fully-connected synapse graph is defined as
+
+where
+\includegraphics{https://latex.codecogs.com/svg.latex?/textbf\{x\}=(x_1,/cdots,x_n),x_i/in(0,1),/textbf\{y\}=(y_1,/cdots,y_n),y_i/in(0,1),/beta_\{ij\}/in(0,1))}.
+
+Transformed to tensor/matrix representation, we have the synapse log
+formula,
+
+We are going to implement this formula for fully-connected synapse
+network with PyTorch in the example.
+
+Moreover, we can design synapse graph like circuit below for some
+special applications.
+
+\hypertarget{header-n25}{%
+\subsection{2. SynaNN Key Features}\label{header-n25}}
+
+\begin{itemize}
+\item
+  Synapses are joint points of neurons with electronic and chemical
+  functions, location of learning and memory
+\item
+  A synapse function is nonlinear, log concavity, infinite derivative in
+  surprisal space (negative log space)
+\item
+  Surprisal synapse is Bose-Einstein distribution with coefficient as
+  negative chemical potential
+\item
+  SynaNN graph \& tensor, surprisal space, commutative diagram,
+  topological conjugacy, backpropagation algorithm
+\item
+  SynaNN for MLP, CNN, RNN are models for various neural network
+  architecture
+\item
+  Synapse block can be embedded into other neural network models
+\item
+  Swap equation links between swap and odds ratio for healthcare,
+  fin-tech, and insurance applications
+\end{itemize}
+
+\hypertarget{header-n41}{%
+\subsection{3. A PyTorch Implementation of A SynaNN for
+MNIST}\label{header-n41}}
+
+PyTroch is an open source machine learning framework that accelerates
+the path from research prototyping to production deployment.
+
+MNIST is a data sets for hand-written digit recognition in machine
+learning. It is split into three parts: 60,000 data points of training
+data (mnist.train), 10,000 points of test data (mnist.test), and 5,000
+points of validation data (mnist.validation).
+
+A hard task to implement SynaNN by PyTorch to solve MNIST problem is to
+define the Synapse class in nn.Module so that we can apply the Synapse
+module to work with other modules of PyTorch.
+
+The architecture of the codes are divided into header, main, train,
+test, net, and synapse.
+
+\hypertarget{header-n46}{%
+\subsubsection{3.1 Header}\label{header-n46}}
+
+The header section imports the using libraries. torch, torchvision, and
+matplotlib are large libraries.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#}
+\CommentTok{\# SynaNN for Image Classification with MNIST Dataset by PyTorch}
+\CommentTok{\# Copyright (c) 2020, Chang LI. All rights reserved. MIT License.}
+\CommentTok{\#}
+\ImportTok{from}\NormalTok{ \_\_future\_\_ }\ImportTok{import}\NormalTok{ print\_function}
+
+\ImportTok{import}\NormalTok{ math}
+\ImportTok{import}\NormalTok{ argparse}
+
+\ImportTok{import}\NormalTok{ torch}
+\ImportTok{import}\NormalTok{ torch.nn }\ImportTok{as}\NormalTok{ nn}
+\ImportTok{import}\NormalTok{ torch.nn.functional }\ImportTok{as}\NormalTok{ F}
+\ImportTok{from}\NormalTok{ torch.nn.parameter }\ImportTok{import}\NormalTok{ Parameter}
+\ImportTok{from}\NormalTok{ torch.nn }\ImportTok{import}\NormalTok{ init}
+\ImportTok{from}\NormalTok{ torch.nn }\ImportTok{import}\NormalTok{ Module}
+
+\ImportTok{import}\NormalTok{ torch.optim }\ImportTok{as}\NormalTok{ optim}
+
+\ImportTok{import}\NormalTok{ torchvision}
+\ImportTok{from}\NormalTok{ torchvision }\ImportTok{import}\NormalTok{ datasets, transforms}
+
+\ImportTok{import}\NormalTok{ matplotlib.pyplot }\ImportTok{as}\NormalTok{ plt}
+
+\NormalTok{train\_losses }\OperatorTok{=}\NormalTok{ train\_counter }\OperatorTok{=}\NormalTok{ test\_counter }\OperatorTok{=}\NormalTok{ test\_losses }\OperatorTok{=}\NormalTok{ []}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{header-n49}{%
+\subsubsection{3.2 Synapse Class}\label{header-n49}}
+
+Here is the default API specification of a class in the neural network
+module of PyTorch.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{class}\NormalTok{ Synapse(nn.Module):}
+    \CommentTok{r"""Applies a synapse function to the incoming data.\textasciigrave{}}
+
+\CommentTok{    Args:}
+\CommentTok{        in\_features:  size of each input sample}
+\CommentTok{        out\_features: size of each output sample}
+\CommentTok{        bias:         if set to \textasciigrave{}\textasciigrave{}False\textasciigrave{}\textasciigrave{}, the layer will not learn an additive bias.}
+\CommentTok{                      Default: \textasciigrave{}\textasciigrave{}True\textasciigrave{}\textasciigrave{}}
+
+\CommentTok{    Shape:}
+\CommentTok{        {-} Input: :math:\textasciigrave{}(N, *, H\_\{in\})\textasciigrave{} where :math:\textasciigrave{}*\textasciigrave{} means any number of}
+\CommentTok{             additional dimensions and :math:\textasciigrave{}H\_\{in\} = }\CharTok{\textbackslash{}t}\CommentTok{ext\{in\textbackslash{}\_features\}\textasciigrave{}}
+\CommentTok{        {-} Output: :math:\textasciigrave{}(N, *, H\_\{out\})\textasciigrave{} where all but the last dimension}
+\CommentTok{             are the same shape as the input and :math:\textasciigrave{}H\_\{out\} = }\CharTok{\textbackslash{}t}\CommentTok{ext\{out\textbackslash{}\_features\}\textasciigrave{}.}
+
+\CommentTok{    Attributes:}
+\CommentTok{        weight: the learnable weights of the module of shape}
+\CommentTok{            	:math:\textasciigrave{}(}\CharTok{\textbackslash{}t}\CommentTok{ext\{out\textbackslash{}\_features\}, }\CharTok{\textbackslash{}t}\CommentTok{ext\{in\textbackslash{}\_features\})\textasciigrave{}. The values are}
+\CommentTok{            	initialized from :math:\textasciigrave{}\textbackslash{}mathcal\{U\}({-}\textbackslash{}sqrt\{k\}, \textbackslash{}sqrt\{k\})\textasciigrave{}, where}
+\CommentTok{            	:math:\textasciigrave{}k = }\CharTok{\textbackslash{}f}\CommentTok{rac\{1\}\{}\CharTok{\textbackslash{}t}\CommentTok{ext\{in\textbackslash{}\_features\}\}\textasciigrave{}}
+\CommentTok{        bias:   the learnable bias of the module of shape :math:\textasciigrave{}(}\CharTok{\textbackslash{}t}\CommentTok{ext\{out\textbackslash{}\_features\})\textasciigrave{}.}
+\CommentTok{                If :attr:\textasciigrave{}bias\textasciigrave{} is \textasciigrave{}\textasciigrave{}True\textasciigrave{}\textasciigrave{}, the values are initialized from}
+\CommentTok{                :math:\textasciigrave{}\textbackslash{}mathcal\{U\}({-}\textbackslash{}sqrt\{k\}, \textbackslash{}sqrt\{k\})\textasciigrave{} where}
+\CommentTok{                :math:\textasciigrave{}k = }\CharTok{\textbackslash{}f}\CommentTok{rac\{1\}\{}\CharTok{\textbackslash{}t}\CommentTok{ext\{in\textbackslash{}\_features\}\}\textasciigrave{}}
+
+\CommentTok{    Examples::}
+\CommentTok{        \textgreater{}\textgreater{}\textgreater{} m = Synapse(64, 64)}
+\CommentTok{        \textgreater{}\textgreater{}\textgreater{} input = torch.randn(128, 20)}
+\CommentTok{        \textgreater{}\textgreater{}\textgreater{} output = m(input)}
+\CommentTok{        \textgreater{}\textgreater{}\textgreater{} print(output.size())}
+\CommentTok{        torch.Size([128, 30])}
+\CommentTok{    """}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{    \_\_constants\_\_ }\OperatorTok{=}\NormalTok{ [}\StringTok{\textquotesingle{}bias\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}in\_features\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}out\_features\textquotesingle{}}\NormalTok{]}
+
+    \KeywordTok{def} \FunctionTok{\_\_init\_\_}\NormalTok{(}\VariableTok{self}\NormalTok{, in\_features, out\_features, bias}\OperatorTok{=}\VariableTok{True}\NormalTok{):}
+        \BuiltInTok{super}\NormalTok{(Synapse, }\VariableTok{self}\NormalTok{).}\FunctionTok{\_\_init\_\_}\NormalTok{()}
+        \VariableTok{self}\NormalTok{.in\_features }\OperatorTok{=}\NormalTok{ in\_features}
+        \VariableTok{self}\NormalTok{.out\_features }\OperatorTok{=}\NormalTok{ out\_features}
+        \VariableTok{self}\NormalTok{.weight }\OperatorTok{=}\NormalTok{ Parameter(torch.Tensor(out\_features, in\_features))}
+        \ControlFlowTok{if}\NormalTok{ bias:}
+            \VariableTok{self}\NormalTok{.bias }\OperatorTok{=}\NormalTok{ Parameter(torch.Tensor(out\_features))}
+        \ControlFlowTok{else}\NormalTok{:}
+            \VariableTok{self}\NormalTok{.register\_parameter(}\StringTok{\textquotesingle{}bias\textquotesingle{}}\NormalTok{, }\VariableTok{None}\NormalTok{)}
+        \VariableTok{self}\NormalTok{.reset\_parameters()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+    \KeywordTok{def}\NormalTok{ reset\_parameters(}\VariableTok{self}\NormalTok{):}
+\NormalTok{        init.kaiming\_uniform\_(}\VariableTok{self}\NormalTok{.weight, a}\OperatorTok{=}\NormalTok{math.sqrt(}\DecValTok{5}\NormalTok{))}
+        \ControlFlowTok{if} \VariableTok{self}\NormalTok{.bias }\KeywordTok{is} \KeywordTok{not} \VariableTok{None}\NormalTok{:}
+\NormalTok{            fan\_in, \_ }\OperatorTok{=}\NormalTok{ init.\_calculate\_fan\_in\_and\_fan\_out(}\VariableTok{self}\NormalTok{.weight)}
+\NormalTok{            bound }\OperatorTok{=} \DecValTok{1} \OperatorTok{/}\NormalTok{ math.sqrt(fan\_in)}
+\NormalTok{            init.uniform\_(}\VariableTok{self}\NormalTok{.bias, }\OperatorTok{{-}}\NormalTok{bound, bound)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+    \CommentTok{\# synapse core}
+    \KeywordTok{def}\NormalTok{ forward(}\VariableTok{self}\NormalTok{, }\BuiltInTok{input}\NormalTok{):}
+        \CommentTok{\# shapex = matrix\_diag(input)}
+\NormalTok{        diagx }\OperatorTok{=}\NormalTok{ torch.stack(}\BuiltInTok{tuple}\NormalTok{(t.diag() }\ControlFlowTok{for}\NormalTok{ t }\KeywordTok{in}\NormalTok{ torch.unbind(}\BuiltInTok{input}\NormalTok{,}\DecValTok{0}\NormalTok{)))}
+\NormalTok{        shapex }\OperatorTok{=}\NormalTok{ diagx.view(}\OperatorTok{{-}}\DecValTok{1}\NormalTok{, }\VariableTok{self}\NormalTok{.out\_features)}
+\NormalTok{        betax }\OperatorTok{=}\NormalTok{ torch.log1p(}\OperatorTok{{-}}\NormalTok{shapex }\OperatorTok{@} \VariableTok{self}\NormalTok{.weight.t())}
+\NormalTok{        row }\OperatorTok{=}\NormalTok{ betax.size()}
+\NormalTok{        allone }\OperatorTok{=}\NormalTok{ torch.ones(}\BuiltInTok{int}\NormalTok{(row[}\DecValTok{0}\NormalTok{]}\OperatorTok{/}\VariableTok{self}\NormalTok{.out\_features), row[}\DecValTok{0}\NormalTok{])}
+        \ControlFlowTok{if}\NormalTok{ torch.cuda.is\_available():}
+\NormalTok{          allone }\OperatorTok{=}\NormalTok{ allone.cuda()}
+        \ControlFlowTok{return}\NormalTok{ torch.exp(torch.log(}\BuiltInTok{input}\NormalTok{) }\OperatorTok{+}\NormalTok{ allone }\OperatorTok{@}\NormalTok{ betax) }\CommentTok{\# + self.bias)    }
+\end{Highlighting}
+\end{Shaded}
+
+One challenge was to represent the links of synapses as tensors so we
+can apply the neural network framework such as PyTorch for deep
+learning. A key step is to construct a Synapse layer so we can embed
+synapse in deep learning neural network. This has been done by defining
+a class Synapse.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+    \KeywordTok{def}\NormalTok{ extra\_repr(}\VariableTok{self}\NormalTok{):}
+        \ControlFlowTok{return} \StringTok{\textquotesingle{}in\_features=}\SpecialCharTok{\{\}}\StringTok{, out\_features=}\SpecialCharTok{\{\}}\StringTok{, bias=}\SpecialCharTok{\{\}}\StringTok{\textquotesingle{}}\NormalTok{.}\BuiltInTok{format}\NormalTok{(}
+            \VariableTok{self}\NormalTok{.in\_features, }\VariableTok{self}\NormalTok{.out\_features, }\VariableTok{self}\NormalTok{.bias }\KeywordTok{is} \KeywordTok{not} \VariableTok{None}
+\NormalTok{        )}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{header-n57}{%
+\subsubsection{3.3 Net Class}\label{header-n57}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{class}\NormalTok{ Net(nn.Module):}
+    \KeywordTok{def} \FunctionTok{\_\_init\_\_}\NormalTok{(}\VariableTok{self}\NormalTok{):}
+        \BuiltInTok{super}\NormalTok{(Net, }\VariableTok{self}\NormalTok{).}\FunctionTok{\_\_init\_\_}\NormalTok{()}
+        \VariableTok{self}\NormalTok{.conv1 }\OperatorTok{=}\NormalTok{ nn.Conv2d(}\DecValTok{1}\NormalTok{, }\DecValTok{10}\NormalTok{, kernel\_size}\OperatorTok{=}\DecValTok{5}\NormalTok{)}
+        \VariableTok{self}\NormalTok{.conv2 }\OperatorTok{=}\NormalTok{ nn.Conv2d(}\DecValTok{10}\NormalTok{, }\DecValTok{20}\NormalTok{, kernel\_size}\OperatorTok{=}\DecValTok{5}\NormalTok{)}
+        \VariableTok{self}\NormalTok{.conv2\_drop }\OperatorTok{=}\NormalTok{ nn.Dropout2d()}
+        
+        \CommentTok{\# fully connected with synapse function}
+        \VariableTok{self}\NormalTok{.fc1 }\OperatorTok{=}\NormalTok{ nn.Linear(}\DecValTok{320}\NormalTok{, }\DecValTok{64}\NormalTok{)}
+        \VariableTok{self}\NormalTok{.fcn }\OperatorTok{=}\NormalTok{ Synapse(}\DecValTok{64}\NormalTok{,}\DecValTok{64}\NormalTok{)}
+        \VariableTok{self}\NormalTok{.fcb }\OperatorTok{=}\NormalTok{ nn.BatchNorm1d(}\DecValTok{64}\NormalTok{)}
+        \VariableTok{self}\NormalTok{.fc2 }\OperatorTok{=}\NormalTok{ nn.Linear(}\DecValTok{64}\NormalTok{, }\DecValTok{10}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+There are two CNN layers for feature retrieving. fc1 is the linear input
+layer, fcn from Synapse is the hidden layer, and fc2 is the output
+layer.
+
+Synapse pluses Batch Normalization can greatly speed up the processing
+to achieve an accuracy goal. We can think of a synapse as a statistical
+distribution computing unit while batch normalization makes evolution
+faster.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+    \KeywordTok{def}\NormalTok{ forward(}\VariableTok{self}\NormalTok{, x):}
+\NormalTok{        x }\OperatorTok{=}\NormalTok{ F.relu(F.max\_pool2d(}\VariableTok{self}\NormalTok{.conv1(x), }\DecValTok{2}\NormalTok{))}
+\NormalTok{        x }\OperatorTok{=}\NormalTok{ F.relu(F.max\_pool2d(}\VariableTok{self}\NormalTok{.conv2\_drop(}\VariableTok{self}\NormalTok{.conv2(x)), }\DecValTok{2}\NormalTok{))}
+\NormalTok{        x }\OperatorTok{=}\NormalTok{ x.view(}\OperatorTok{{-}}\DecValTok{1}\NormalTok{, }\DecValTok{320}\NormalTok{)}
+\NormalTok{        x }\OperatorTok{=}\NormalTok{ F.relu(}\VariableTok{self}\NormalTok{.fc1(x))}
+\NormalTok{        x }\OperatorTok{=}\NormalTok{ F.dropout(x, training}\OperatorTok{=}\VariableTok{self}\NormalTok{.training)}
+\NormalTok{        x }\OperatorTok{=}\NormalTok{ F.softmax(x, dim}\OperatorTok{=}\DecValTok{1}\NormalTok{)}
+        
+        \CommentTok{\# fcn is the output of synapse}
+\NormalTok{        x }\OperatorTok{=} \VariableTok{self}\NormalTok{.fcn(x)}
+        \CommentTok{\# fcb is the batch no)rmal }
+\NormalTok{        x }\OperatorTok{=} \VariableTok{self}\NormalTok{.fcb(x)}
+\NormalTok{        x }\OperatorTok{=} \VariableTok{self}\NormalTok{.fc2(x)}
+        \ControlFlowTok{return}\NormalTok{ F.log\_softmax(x, dim}\OperatorTok{=}\DecValTok{1}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{header-n63}{%
+\subsubsection{3.4 Train}\label{header-n63}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{def}\NormalTok{ train(args, model, device, train\_loader, optimizer, epoch):}
+\NormalTok{    model.train()}
+    \ControlFlowTok{for}\NormalTok{ batch\_idx, (data, target) }\KeywordTok{in} \BuiltInTok{enumerate}\NormalTok{(train\_loader):}
+\NormalTok{        data, target }\OperatorTok{=}\NormalTok{ data.to(device), target.to(device)}
+\NormalTok{        optimizer.zero\_grad()}
+\NormalTok{        output }\OperatorTok{=}\NormalTok{ model(data)}
+\NormalTok{        loss }\OperatorTok{=}\NormalTok{ F.nll\_loss(output, target)}
+\NormalTok{        loss.backward()}
+\NormalTok{        optimizer.step()}
+        \ControlFlowTok{if}\NormalTok{ batch\_idx }\OperatorTok{\%}\NormalTok{ args.log\_interval }\OperatorTok{==} \DecValTok{0}\NormalTok{:}
+            \BuiltInTok{print}\NormalTok{(}\StringTok{\textquotesingle{}Train Epoch: }\SpecialCharTok{\{\}}\StringTok{ [}\SpecialCharTok{\{\}}\StringTok{/}\SpecialCharTok{\{\}}\StringTok{ (}\SpecialCharTok{\{:.0f\}}\StringTok{\%)]}\CharTok{\textbackslash{}t}\StringTok{Loss: }\SpecialCharTok{\{:.6f\}}\StringTok{\textquotesingle{}}\NormalTok{.}\BuiltInTok{format}\NormalTok{(}
+\NormalTok{                epoch, batch\_idx }\OperatorTok{*} \BuiltInTok{len}\NormalTok{(data), }\BuiltInTok{len}\NormalTok{(train\_loader.dataset),}
+                \FloatTok{100.} \OperatorTok{*}\NormalTok{ batch\_idx }\OperatorTok{/} \BuiltInTok{len}\NormalTok{(train\_loader), loss.item()))}
+\NormalTok{            train\_losses.append(loss.item())}
+\NormalTok{            train\_counter.append((batch\_idx}\OperatorTok{*}\DecValTok{64}\NormalTok{) }\OperatorTok{+}\NormalTok{ ((epoch}\OperatorTok{{-}}\DecValTok{1}\NormalTok{)}\OperatorTok{*}\BuiltInTok{len}\NormalTok{(train\_loader.dataset)))}
+\NormalTok{            torch.save(model.state\_dict(), }\StringTok{\textquotesingle{}model.pth\textquotesingle{}}\NormalTok{)}
+\NormalTok{            torch.save(optimizer.state\_dict(), }\StringTok{\textquotesingle{}optimizer.pth\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{header-n65}{%
+\subsubsection{3.5 Test}\label{header-n65}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{def}\NormalTok{ test(args, model, device, test\_loader):}
+\NormalTok{    model.}\BuiltInTok{eval}\NormalTok{()}
+\NormalTok{    test\_loss }\OperatorTok{=} \DecValTok{0}
+\NormalTok{    correct }\OperatorTok{=} \DecValTok{0}
+
+    \ControlFlowTok{with}\NormalTok{ torch.no\_grad():}
+        \ControlFlowTok{for}\NormalTok{ data, target }\KeywordTok{in}\NormalTok{ test\_loader:}
+\NormalTok{            data, target }\OperatorTok{=}\NormalTok{ data.to(device), target.to(device)}
+\NormalTok{            output }\OperatorTok{=}\NormalTok{ model(data)}
+\NormalTok{            test\_loss }\OperatorTok{+=}\NormalTok{ F.nll\_loss(output, target, reduction}\OperatorTok{=}\StringTok{\textquotesingle{}sum\textquotesingle{}}\NormalTok{).item() }\CommentTok{\# sum up batch loss}
+\NormalTok{            pred }\OperatorTok{=}\NormalTok{ output.}\BuiltInTok{max}\NormalTok{(}\DecValTok{1}\NormalTok{, keepdim}\OperatorTok{=}\VariableTok{True}\NormalTok{)[}\DecValTok{1}\NormalTok{] }\CommentTok{\# get the index of the max log{-}probability}
+\NormalTok{            correct }\OperatorTok{+=}\NormalTok{ pred.eq(target.view\_as(pred)).}\BuiltInTok{sum}\NormalTok{().item()}
+\NormalTok{    test\_loss }\OperatorTok{/=} \BuiltInTok{len}\NormalTok{(test\_loader.dataset)}
+\NormalTok{    test\_losses.append(test\_loss)}
+    \BuiltInTok{print}\NormalTok{(}\StringTok{\textquotesingle{}}\CharTok{\textbackslash{}n}\StringTok{Test set: Average loss: }\SpecialCharTok{\{:.4f\}}\StringTok{, Accuracy: }\SpecialCharTok{\{\}}\StringTok{/}\SpecialCharTok{\{\}}\StringTok{ (}\SpecialCharTok{\{:.2f\}}\StringTok{\%)}\CharTok{\textbackslash{}n}\StringTok{\textquotesingle{}}\NormalTok{.}\BuiltInTok{format}\NormalTok{(}
+\NormalTok{        test\_loss, correct, }\BuiltInTok{len}\NormalTok{(test\_loader.dataset),}
+        \FloatTok{100.} \OperatorTok{*}\NormalTok{ correct }\OperatorTok{/} \BuiltInTok{len}\NormalTok{(test\_loader.dataset)))}
+  
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{header-n67}{%
+\subsubsection{3.6 Main}\label{header-n67}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{def}\NormalTok{ main():}
+    \BuiltInTok{print}\NormalTok{(torch.version.\_\_version\_\_)}
+    
+    \CommentTok{\# Training settings}
+    \ImportTok{import}\NormalTok{ easydict}
+\NormalTok{    args }\OperatorTok{=}\NormalTok{ easydict.EasyDict(\{}
+      \StringTok{"batch\_size"}\NormalTok{: }\DecValTok{100}\NormalTok{,}
+      \StringTok{"test\_batch\_size"}\NormalTok{: }\DecValTok{100}\NormalTok{,}
+      \StringTok{"epochs"}\NormalTok{: }\DecValTok{200}\NormalTok{,}
+      \StringTok{"lr"}\NormalTok{: }\FloatTok{0.012}\NormalTok{,}
+      \StringTok{"momentum"}\NormalTok{: }\FloatTok{0.5}\NormalTok{,}
+      \StringTok{"no\_cuda"}\NormalTok{: }\VariableTok{False}\NormalTok{,}
+      \StringTok{"seed"}\NormalTok{: }\DecValTok{5}\NormalTok{,}
+      \StringTok{"log\_interval"}\NormalTok{:}\DecValTok{100}
+\NormalTok{    \})}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{    use\_cuda }\OperatorTok{=} \KeywordTok{not}\NormalTok{ args.no\_cuda }\KeywordTok{and}\NormalTok{ torch.cuda.is\_available()}
+\NormalTok{    torch.manual\_seed(args.seed)}
+\NormalTok{    torch.backends.cudnn.enabled }\OperatorTok{=} \VariableTok{False}
+   
+\NormalTok{    device }\OperatorTok{=}\NormalTok{ torch.device(}\StringTok{"cuda:0"} \ControlFlowTok{if}\NormalTok{ use\_cuda }\ControlFlowTok{else} \StringTok{"cpu"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+use\_cuda is the tag for gpu availability.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{    kwargs }\OperatorTok{=}\NormalTok{ \{}\StringTok{\textquotesingle{}num\_workers\textquotesingle{}}\NormalTok{: }\DecValTok{1}\NormalTok{, }\StringTok{\textquotesingle{}pin\_memory\textquotesingle{}}\NormalTok{: }\VariableTok{True}\NormalTok{\} }\ControlFlowTok{if}\NormalTok{ use\_cuda }\ControlFlowTok{else}\NormalTok{ \{\}}
+\NormalTok{    train\_loader }\OperatorTok{=}\NormalTok{ torch.utils.data.DataLoader(}
+\NormalTok{        datasets.MNIST(}\StringTok{\textquotesingle{}../data\textquotesingle{}}\NormalTok{, train}\OperatorTok{=}\VariableTok{True}\NormalTok{, download}\OperatorTok{=}\VariableTok{True}\NormalTok{,}
+\NormalTok{                       transform}\OperatorTok{=}\NormalTok{transforms.Compose([}
+\NormalTok{                           transforms.ToTensor(),}
+\NormalTok{                           transforms.Normalize((}\FloatTok{0.1307}\NormalTok{,), (}\FloatTok{0.3081}\NormalTok{,))}
+\NormalTok{                       ])),}
+\NormalTok{        batch\_size}\OperatorTok{=}\NormalTok{args.batch\_size, shuffle}\OperatorTok{=}\VariableTok{True}\NormalTok{, }\OperatorTok{**}\NormalTok{kwargs)}
+\NormalTok{    test\_loader }\OperatorTok{=}\NormalTok{ torch.utils.data.DataLoader(}
+\NormalTok{        datasets.MNIST(}\StringTok{\textquotesingle{}../data\textquotesingle{}}\NormalTok{, train}\OperatorTok{=}\VariableTok{False}\NormalTok{, transform}\OperatorTok{=}\NormalTok{transforms.Compose([}
+\NormalTok{                           transforms.ToTensor(),}
+\NormalTok{                           transforms.Normalize((}\FloatTok{0.1307}\NormalTok{,), (}\FloatTok{0.3081}\NormalTok{,))}
+\NormalTok{                       ])),}
+\NormalTok{        batch\_size}\OperatorTok{=}\NormalTok{args.test\_batch\_size, shuffle}\OperatorTok{=}\VariableTok{True}\NormalTok{, }\OperatorTok{**}\NormalTok{kwargs)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{    model }\OperatorTok{=}\NormalTok{ Net().to(device)}
+\NormalTok{    optimizer }\OperatorTok{=}\NormalTok{ optim.SGD(model.parameters(), lr}\OperatorTok{=}\NormalTok{args.lr, momentum}\OperatorTok{=}\NormalTok{args.momentum)}
+    \CommentTok{\# optimizer = optim.Adam(model.parameters(), lr=args.lr)}
+                          
+\NormalTok{    test\_counter }\OperatorTok{=}\NormalTok{ [i}\OperatorTok{*}\BuiltInTok{len}\NormalTok{(train\_loader.dataset) }\ControlFlowTok{for}\NormalTok{ i }\KeywordTok{in} \BuiltInTok{range}\NormalTok{(args.epochs)]}
+    \ControlFlowTok{for}\NormalTok{ epoch }\KeywordTok{in} \BuiltInTok{range}\NormalTok{(}\DecValTok{1}\NormalTok{, args.epochs }\OperatorTok{+} \DecValTok{1}\NormalTok{):}
+\NormalTok{        train(args, model, device, train\_loader, optimizer, epoch)}
+\NormalTok{        test(args, model, device, test\_loader)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+    \CommentTok{\# draw curves}
+\NormalTok{    fig }\OperatorTok{=}\NormalTok{ plt.figure()}
+\NormalTok{    plt.plot(train\_counter, train\_losses, color}\OperatorTok{=}\StringTok{\textquotesingle{}blue\textquotesingle{}}\NormalTok{)}
+\NormalTok{    plt.scatter(test\_counter, test\_losses, color}\OperatorTok{=}\StringTok{\textquotesingle{}red\textquotesingle{}}\NormalTok{)}
+\NormalTok{    plt.legend([}\StringTok{\textquotesingle{}Train Loss\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Test Loss\textquotesingle{}}\NormalTok{], loc}\OperatorTok{=}\StringTok{\textquotesingle{}upper right\textquotesingle{}}\NormalTok{)}
+\NormalTok{    plt.xlabel(}\StringTok{\textquotesingle{}number of training examples seen\textquotesingle{}}\NormalTok{)}
+\NormalTok{    plt.ylabel(}\StringTok{\textquotesingle{}negative log likelihood loss\textquotesingle{}}\NormalTok{)}
+\NormalTok{    fig}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ControlFlowTok{if} \VariableTok{\_\_name\_\_} \OperatorTok{==} \StringTok{\textquotesingle{}\_\_main\_\_\textquotesingle{}}\NormalTok{:}
+\NormalTok{  main()}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{header-n76}{%
+\subsection{4. Results}\label{header-n76}}
+
+\hypertarget{header-n78}{%
+\subsection{5. References}\label{header-n78}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item ~
+  \hypertarget{header-n81}{%
+  \subparagraph{SynaNN: A Synaptic Neural Network and Synapse
+  Learning}\label{header-n81}}
+
+  https://www.researchgate.net/publication/327433405\emph{SynaNN}A\emph{Synaptic}Neural\emph{Network}and\emph{Synapse}Learning
+\item
+  \textbf{A Non-linear Synaptic Neural Network Based on Excitation and
+  Inhibition}
+
+  https://www.researchgate.net/publication/320557823\emph{A}Non-linear\emph{Synaptic}Neural\emph{Network}Based\emph{on}Excitation\emph{and}Inhibition
+\item
+\end{enumerate}
+
+\end{document}
