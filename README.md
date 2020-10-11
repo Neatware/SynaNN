@@ -10,53 +10,47 @@
 
 Synapses play an important role in biological neural networks.  They're joint points of neurons where learning and memory happened. The picture below demonstrates that two neurons (red) connected through a branch chain of synapses which may  link to other neurons. 
 
-<img src="synapse.jpg" alt="synapse" style="zoom: 33%;" />
+<img src="synapse.jpg" alt="synapse" width="80%" />
 
 
 
 Inspired by the synapse research of neuroscience, we construct a simple model that can describe some key properties of a synapse. 
 
-​                              <img src="synapse-unit.png" alt="synpase" style="width:70%;" /> 
+​                              <img src="synapse-unit.png" alt="synpase" width="70%" /> 
 
 A Synaptic Neural Network (SynaNN) contains non-linear synapse networks that connect to neurons. A synapse consists of an input from the excitatory-channel, an input from the inhibitory-channel, and an output channel which sends a value to other synapses or neurons. The synapse function is
 
-```
-![equation](http://www.sciweavers.org/tex2img.php?eq=(S(x,y;\alpha,\beta)=\alpha x(1-\beta y))
-```
 
-$$
-S(x,y;\alpha,\beta)=\alpha x(1-\beta y)
-$$
+![](https://latex.codecogs.com/svg.latex?S(x,y;\alpha,\beta)=\alpha x(1-\beta y))
+
 
 where x∈(0,1) is the open probability of all excitatory channels and α >0 is the parameter of the excitatory channels; y∈(0,1) is the open probability of all inhibitory channels and β∈(0,1) is the parameter of the inhibitory channels. The surface of the synapse function is  
 
 
 
-<img src="synpase.png" alt="synpase" style="width:50%;" />
+<img src="synpase.png" alt="synpase" width="50%" />
 
 By combining deep learning, we expect to build ultra large scale neural networks to solve real-world AI problems. At the same time, we want to create an explainable neural network model to better understand what an AI model doing instead of a black box solution.
 
-​                                     <img src="E425.tmp.png" alt="synpase" style="width:60%;" />
+​                                     <img src="E425.tmp.png" alt="synpase" width="60%" />
 
 A synapse graph is a connection of synapses. In particular, a synapse tensor is fully connected synapses from input neurons to output neurons with some hidden layers. Synapse learning can work with gradient descent and backpropagation algorithms. SynaNN can be applied to construct MLP, CNN, and RNN models.
 
 Assume that the total number of input of the synapse graph equals the total number of outputs, the fully-connected synapse graph is defined as 
-$$
-y_i(\textbf{x};\ β_{i1},\ ...,β_{in}) = \alpha_i x_i ∏_{j=1}^n (1−β_{ij}x_j), \ for\ all\ i∈[1,n]
-$$
-where 
-$$
-\textbf{x}= (x_1,···,x_n), x_i∈(0,1) , \textbf{y}= (y_1,···,y_n), y_i∈(0,1), 0< β_{ij}<1
-$$
+
+![](https://latex.codecogs.com/svg.latex?y_{i}(\textbf{x}; \pmb\beta_i) = \alpha_i x_{i}{\prod_{j=1}^{n}(1-\beta_{ij}x_{j})},\ for\ all\ i \in [1,n])
+
+where  ![](https://latex.codecogs.com/svg.latex?\textbf{x} = (x_1, \cdots, x_n), x_i \in (0, 1), \textbf{y} = (y_1, \cdots, y_n), y_i \in (0,1), \beta_{ij} \in (0,1)). 
+
 Transformed to tensor/matrix representation, we have the synapse log formula, 
-$$
-log(\textbf{y}) = log(\textbf{x}) + {\textbf{1}_{|x|}} * log(\textbf{1}_{|\beta|}-diag(\textbf{x})*\pmb{\beta}^T).
-$$
+
+​                                                    ![](https://latex.codecogs.com/svg.latex?log(\textbf{y})= log(\textbf{x}) + {\textbf{1}_{|x|}} * log(\textbf{1}_{|\beta|}-diag(\textbf{x})*\pmb{\beta}^T))
+
 We are going to implement this formula for fully-connected synapse network with PyTorch in the example.
 
 Moreover, we can design synapse graph like circuit below for some special applications. 
 
-<img src="synapse-flip.png" alt="synapse-flip" style="width:50%;" />
+<img src="synapse-flip.png" alt="synapse-flip" width="50%" />
 
 ## 2. SynaNN Key Features
 
