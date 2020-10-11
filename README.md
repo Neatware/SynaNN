@@ -16,7 +16,7 @@ Synapses play an important role in biological neural networks.  They're joint po
 
 Inspired by the synapse research of neuroscience, we construct a simple model that can describe some key properties of a synapse. 
 
-​                                           ![synapse-unit](.\synapse-unit.png) 
+​                                           ![synapse-unit](synapse-unit.png) 
 
 A Synaptic Neural Network (SynaNN) contains non-linear synapse networks that connect to neurons. A synapse consists of an input from the excitatory-channel, an input from the inhibitory-channel, and an output channel which sends a value to other synapses or neurons. The synapse function is
 $$
@@ -26,11 +26,11 @@ where x∈(0,1) is the open probability of all excitatory channels and α >0 is 
 
 
 
-<img src="C:\Users\John\Documents\GitHub\SynaNet\synpase.png" alt="synpase" style="zoom:50%;" />
+<img src="synpase.png" alt="synpase" style="zoom:50%;" />
 
 By combining deep learning, we expect to build ultra large scale neural networks to solve real-world AI problems. At the same time, we want to create an explainable neural network model to better understand what an AI model doing instead of a black box solution.
 
-​                  ~~![E425.tmp](C:\Users\John\Documents\GitHub\SynaNet\E425.tmp.png)~~
+​                  ~~![E425.tmp](E425.tmp.png)~~
 
 A synapse graph is a connection of synapses. In particular, a synapse tensor is fully connected synapses from input neurons to output neurons with some hidden layers. Synapse learning can work with gradient descent and backpropagation algorithms. SynaNN can be applied to construct MLP, CNN, and RNN models.
 
@@ -50,7 +50,7 @@ We are going to implement this formula for fully-connected synapse network with 
 
 Moreover, we can design synapse graph like circuit below for some special applications. 
 
-<img src="C:\Users\John\Documents\GitHub\SynaNet\synapse-flip.png" alt="synapse-flip" style="zoom:50%;" />
+<img src="synapse-flip.png" alt="synapse-flip" style="zoom:50%;" />
 
 ## 2. SynaNN Key Features
 
